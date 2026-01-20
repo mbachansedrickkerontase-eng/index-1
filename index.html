@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Greet</button>
+
+    <form action="submit.php" onsubmit="return validateUser()"><center>
+        <label for="">Username</label><br>
+        <input type="text" name="" id="Username"><br>
+        <label for="">Password</label><br>
+        <input type="password" name="" id="password"><br>
+        <label for="">confirm password</label><br>
+        <input type="Password" name="" id="confirmpassword"><br><br>
+        <button style="background-color: blue; color: white; border-radius: 30px;">
+            signUp</button>
+        </center>
+    </form>
+
+    <script>
+        function validateUser(){
+            let Username= document.getElementById("Username").value
+            let password= document.getElementById("password").value
+            let confirmpassword= document.getElementById("confirmpassword").value
+
+            if( Username.length < 6){
+                alert("sorry that is not a real name.")
+                return false
+            }
+
+            if(password ==""){
+                alert("sorry password cannot be empty fill it.")
+                return false
+            }
+            if(confirmpassword !=password){
+                alert("confirm Password")
+                return false
+
+            }
+        }
+
+        let mybtn = document.getElementById('btn')
+        mybtn.addEventListener("click", function(){
+            alert("Hello greetings")
+            mybtn.style.backgroundColor= "red"
+            mybtn.style.color="white"
+        })
+
+    </script>
+</body>
+</html>
